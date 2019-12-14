@@ -37,7 +37,7 @@ node('') {
 		}
         }
 	stage ('Create And Publish Docker Image'){
-                bat 'docker run -p 5050:8090 -d feresfoudhaili/validation-cd:0.0.1-SNAPSHOT';
+                bat 'docker run -p 5050:8090 -d kanaan.chibani/validation-cd:0.0.1-SNAPSHOT';
         }
 	stage ('Email-Notification'){
 		mail bcc: '', body: '''Hello,
@@ -48,6 +48,6 @@ node('') {
 		
 		Jenkins_Admin.
 		
-		''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'feres.foudhaili@esprit.tn'
+		''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'kanaan.chibani@esprit.tn'
 	}
 }
